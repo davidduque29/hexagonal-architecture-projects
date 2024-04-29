@@ -1,0 +1,20 @@
+#endpoints:
+#  enabled: false
+info:
+  component: backend-arquetipo
+spring:
+  application:
+    name: backend-arquetipo
+  profiles:
+    active: dev
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Asus123*
+  jpa:
+    databasePlatform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+server:
+  servlet:
+    context-path: "/financesbucket"
+  port: 8080

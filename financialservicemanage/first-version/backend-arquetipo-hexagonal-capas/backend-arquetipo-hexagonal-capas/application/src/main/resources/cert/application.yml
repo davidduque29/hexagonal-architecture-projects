@@ -1,0 +1,28 @@
+endpoints:
+  enabled: false
+info:
+  component: {APP_NAME}
+spring:
+  application:
+    name: {APP_NAME}
+  profiles:
+    active: cert
+server:
+  servlet:
+    context-path: "/{APP_NAME}"
+  port: {PORT}
+
+aws:
+  accessKey: {AWS_ACCESS}
+  secretKey: {AWS_SECRET}
+
+resilience4j:
+  retry:
+    instances:
+      pruebaRetry:
+        maxAttempts: 3
+        waitDuration: 1s
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2
+        retryExceptions:
+          - com.amazonaws.AmazonServiceException
